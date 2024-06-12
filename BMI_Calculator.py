@@ -1,6 +1,6 @@
 # Getting Inputs
-height = float(input("Enter your height in (kg) : "))
-weight = float(input("Enter your weight in (m) : "))
+height = float(input("Enter your height in (m) : "))
+weight = float(input("Enter your weight in (kg) : "))
 
 # Calculating BMI
 BMI = weight / (height * height)
@@ -9,4 +9,13 @@ BMI = weight / (height * height)
 round(BMI , 2)
 
 # Giving Output
-print(f"Your BMI is {BMI} ")
+if (BMI < 18.29):
+    print(f"Your BMI is {BMI}, you are underweight.")
+elif (BMI < 22):
+    print(f"Your BMI is {BMI}, you have a normal weight.")
+elif (BMI < 28.51):
+    print(f"Your BMI is {BMI}, you are slightly overweight.")
+elif (BMI < 32.56):
+    print(f"Your BMI is {BMI}, you are obese.")
+else:
+    print(f"Your BMI is {BMI}, you are clinically obese.")
