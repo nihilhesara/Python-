@@ -18,9 +18,29 @@ def coin_count(quarters,dimes,nickles,pennies,price,choice):
     if (change > 0):
         print(f"Here is {change} in change.")
         print(f"Here is your {choice}. Enjoy!")
+        return price
         
     else:
         print("Sorry that's not enough money. Money refunded.")
+
+def stoke(choice):
+    Water = 300
+    Milk = 200
+    Coffee = 100
+
+    if (choice.lower() == "espresso"):
+        Water -= 50
+        Coffee -= 18
+
+    elif (choice.lower() == "latte"):
+        Water -= 200
+        Milk -= 150
+        Coffee -= 24
+
+    elif (choice.lower() == "cappuccino"):
+        Water -= 250
+        Milk -= 100
+        Coffee -= 24
 
 
 while True:
