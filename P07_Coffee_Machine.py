@@ -16,15 +16,22 @@ def coin_count(quarters,dimes,nickles,pennies,price,choice):
     change = total - price
 
     if (change > 0):
-        print(f"Here is {change} in change.")
-        print(f"Here is your {choice}. Enjoy!")
+        print(f"\nHere is {change} in change.")
+        print(f"Here is your {choice}. Enjoy!\n")
         return price
         
     else:
         print("Sorry that's not enough money. Money refunded.")
       
 while True:
-    choice = input(" What would you like? (espresso/latte/cappuccino) : ")
+    choice = input("What would you like? (espresso/latte/cappuccino) : ")
+
+    if (choice.lower() == "report"):
+        print(f"\nWater : {Water}ml")
+        print(f"Milk : {Milk}ml")
+        print(f"Coffee : {Coffee}g")
+        print(f"Money : ${Money}")
+        continue
 
     quarters = int(input("How many quarters : "))
     dimes = int(input("How many dimes : "))
@@ -80,11 +87,5 @@ while True:
         Coffee -= 24
         Money += price
 
-    elif (choice.lower() == "report"):
-        print(f"Water : {Water}")
-        print(f"Milk : {Milk}")
-        print(f"Coffee : {Coffee}")
-        print(f"Money : {Money}")
-
-   
-        
+    else:
+        print("Error!")    
