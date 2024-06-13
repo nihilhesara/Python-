@@ -25,7 +25,7 @@ def coin_count(quarters,dimes,nickles,pennies,price,choice):
         print("Sorry that's not enough money. Money refunded.")
       
 while True:
-    choice = input("What would you like? (espresso/latte/cappuccino/report) : ")
+    choice = input("What would you like? (espresso/latte/cappuccino) : ")
 
     # User report
     if (choice.lower() == "report"):
@@ -34,6 +34,9 @@ while True:
         print(f"Coffee : {Coffee}g")
         print(f"Money : ${Money}")
         continue
+
+    elif (choice.lower() == "off"):
+        exit()
     
     # Getting inputs for the coins 
     quarters = int(input("How many quarters : "))
