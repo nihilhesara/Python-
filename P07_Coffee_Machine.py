@@ -22,38 +22,69 @@ def coin_count(quarters,dimes,nickles,pennies,price,choice):
         
     else:
         print("Sorry that's not enough money. Money refunded.")
-
-def stoke(choice):
-    Water = 300
-    Milk = 200
-    Coffee = 100
-
-    if (choice.lower() == "espresso"):
-        Water -= 50
-        Coffee -= 18
-
-    elif (choice.lower() == "latte"):
-        Water -= 200
-        Milk -= 150
-        Coffee -= 24
-
-    elif (choice.lower() == "cappuccino"):
-        Water -= 250
-        Milk -= 100
-        Coffee -= 24
-
-
+      
 while True:
     choice = input(" What would you like? (espresso/latte/cappuccino) : ")
 
+    quarters = int(input("How many quarters : "))
+    dimes = int(input("How many dimes : "))
+    nickles = int(input("How many nickles : "))
+    pennies = int(input("How many pennies : "))
+
     if (choice.lower() == "espresso"):
-        print()
+        price = 1.5
+        
+        if (Water < 50):
+            print("Sorry there is not enough water.")
+        elif (Coffee < 18):
+            print("Sorry there is not enough Coffee.")
+        else:
+            coin_count(quarters,dimes,nickles,pennies,price,choice)
+
+        Water -= 50
+        Coffee -= 18
+        Money += price
+
     elif (choice.lower() == "latte"):
-        print()
+        price = 2.5
+
+        if (Water < 200):
+            print("Sorry there is not enough water.")
+        elif (Milk < 150):
+            print("Sorry there is not enough Milk.")
+        elif (Coffee < 24):
+            print("Sorry there is not enough Coffee.")
+        else:
+            coin_count(quarters,dimes,nickles,pennies,price,choice)
+        
+        Water -= 200
+        Milk -= 150
+        Coffee -= 24
+        Money += price
+        
+
     elif (choice.lower() == "cappuccino"):
-        print()
+        price = 3
+        
+        if (Water < 250):
+            print("Sorry there is not enough water.")
+        elif (Milk < 100):
+            print("Sorry there is not enough Milk.")
+        elif (Coffee < 24):
+            print("Sorry there is not enough Coffee.")
+        else:
+            coin_count(quarters,dimes,nickles,pennies,price,choice)
+        
+        Water -= 250
+        Milk -= 100
+        Coffee -= 24
+        Money += price
+
     elif (choice.lower() == "report"):
-        print()
+        print(f"Water : {Water}")
+        print(f"Milk : {Milk}")
+        print(f"Coffee : {Coffee}")
+        print(f"Money : {Money}")
 
    
         
