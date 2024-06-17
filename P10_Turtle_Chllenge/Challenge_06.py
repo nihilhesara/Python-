@@ -2,7 +2,9 @@ from turtle import Turtle
 import colorgram
 # Install colorgram - pip install colorgram.py
 
-# Extract 6 colors from an image.
-colors = colorgram.extract('image.jpg', 6)
+rgb_colors = []
+colors = colorgram.extract('C:\\Users\\ASUS\\Desktop\\Udemy Python\\Projects\\Python-\\image.jpg', 30)
+for color in colors:
+    rgb_colors.append(color.rgb)
 
 print(colors)
