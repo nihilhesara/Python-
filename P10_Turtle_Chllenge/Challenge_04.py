@@ -11,4 +11,4 @@ for i in range(300):
     tim.forward(30)
     tim.setheading(random.choice(directions))   # Randomly choose a random direction
     tim.pensize(10)                             # Thickness of the line
-    tim.speed("fastest")                        # Speed of the line
+    tim.speed("fastest")                        # Speed of the line (slowest,slow,normal,fast)
