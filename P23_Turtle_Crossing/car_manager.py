@@ -9,6 +9,7 @@ class CarManager:
     
     def __init__(self):
         self.all_cars = []
+        self.car_speed = STRATING_MOVE_DISTANCE
     
     def create_car(self):
         random_chance =  random.randint(1,6)
