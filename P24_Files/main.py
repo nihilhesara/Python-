@@ -23,3 +23,5 @@ with open("/Users/ASUS/Desktop/Udemy Python/Projects/Python-/P24_Files/file.txt"
 # append mode 
 with open("/Users/ASUS/Desktop/Udemy Python/Projects/Python-/P24_Files/file.txt","a") as file:
     file.write("\nAppend text")
+
+# file path must wite in /
