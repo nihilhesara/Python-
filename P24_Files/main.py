@@ -1,13 +1,13 @@
 # method - I
 
-file = open("file.txt")
+file = open("/Users/ASUS/Desktop/Udemy Python/Projects/Python-/P24_Files/file.txt")
 contents = file.read()
 print(contents)
 file.close()
 
 # method - II
 
-with open("file.txt") as file:
+with open ("/Users/ASUS/Desktop/Udemy Python/Projects/Python-/P24_Files/file.txt") as file:
     contents = file.read()
     print(contents)
 
@@ -15,11 +15,11 @@ with open("file.txt") as file:
 
 # write mode 
 
-with open("file.txt","w") as file:
+with open("/Users/ASUS/Desktop/Udemy Python/Projects/Python-/P24_Files/file.txt","w") as file:
     file.write("New text")
 
 # __________________________________________
 
 # append mode 
-with open("file.txt","a") as file:
-    file.write("\nNew text")
+with open("/Users/ASUS/Desktop/Udemy Python/Projects/Python-/P24_Files/file.txt","a") as file:
+    file.write("\nAppend text")
