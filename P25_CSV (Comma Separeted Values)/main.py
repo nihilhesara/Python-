@@ -1,5 +1,5 @@
 import os
-import pandas             # python -m pip install pandas
+import pandas             # python -m pip install pandas (pandas documentation - https://pandas.pydata.org/docs/reference/index.html)
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))    # move file path to the woking folder
 
@@ -22,4 +22,39 @@ with open ("weather_data.csv") as data_file:
 data = pandas.read_csv("weather_data.csv")
 print(data)
 print("\n\n")
-print(data["temp"])
+print(data["temp"])                         # List is like a series in pandas library
+# but tables are data frames like 2d arrayes in java
+temp_list = data["temp"].to_list()                      # convert data to a list
+print(len(temp_list))
+
+# Getting the average temp
+average = sum(temp_list) / len(temp_list)
+print(average)
+
+# Short method to get the average 
+print(data["temp"].mean())                  # dataframe[column name].method name
+
+# to find the maximum temp
+print(data["temp"].max())
+
+# Get data in a row
+print(data[data.day == "Monday"])
+
+# get the max temp row 
+print(data[data.temp == data.temp.max()])
+
+# Getting monday temp and convert it in to farenheit
+monday = data[data.day == "Monday"]
+print(monday.temp * (9/5) + 32) 
+
+# Create datafram from scratch
+data_dict = {
+    "students" : ["Amy","James","Angela"],
+    "scores" : [75,65,55]
+}
+
+data_frame = pandas.DataFrame(data_dict)
+print(data_frame)
+
+# Create a new CSV file from new data
+data_frame.to_csv("new_data.csv")
