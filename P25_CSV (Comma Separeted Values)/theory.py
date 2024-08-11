@@ -3,9 +3,9 @@ import pandas             # python -m pip install pandas (pandas documentation -
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))    # move file path to the woking folder
 
-'''with open ("weather_data.csv") as data_file:
-    data = data_file.readlines()                        # readlines get each line in the csv file and turn it into a list
-    print(data)
+'''with open ("weather_data.csv") as data_file:         # https://docs.google.com/spreadsheets/d/1Rs1CKjiagTeXa53212JkjRSDu-tx77_YxEgGdkv5zRY/edit?gid=0#gid=0
+    data = data_file.readlines()                        # click the above google sheet link and download it as a csv file                        
+    print(data)                                         # readlines get each line in the csv file and turn it into a list
 
 import csv                # open cmd and type this code below
 
