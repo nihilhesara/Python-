@@ -1,5 +1,6 @@
 import turtle
 import os
+import pandas
 
 # Change directory to the location of the script
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -11,11 +12,28 @@ screen.addshape(image)
 
 turtle.shape(image)
 
-def get_mouse_click_coor(x,y):
+data = pandas.read_csv("50_states.csv")
+all_states = data.state.to_list()
+
+'''def get_mouse_click_coor(x,y):
     print(x,y)
 
 turtle.onscreenclick(get_mouse_click_coor)
 turtle.mainloop()                               # To continue the screen if user click the screen
-
 # User can run the above code and click the state and then the x and y value will print in the console 
-# _____________________________________________________________________________________________________
+# _____________________________________________________________________________________________________'''
+
+answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
+print(answer_state)
+
+if answer_state in all_states:
+    t = turtle.Turtle()
+    t.hideturtle()
+    t.penup()
+    state_data = data[data.state == answer_state]
+    t.goto(state_data.x.item(), state_data.y.item())    # Capturing single element using .item
+    t.write(answer_state)
+
+screen.exitonclick()
+
+#turtle.mainloop()                               # To continue the screen if user click the screen
