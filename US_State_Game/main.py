@@ -22,17 +22,21 @@ turtle.onscreenclick(get_mouse_click_coor)
 turtle.mainloop()                               # To continue the screen if user click the screen
 # User can run the above code and click the state and then the x and y value will print in the console 
 # _____________________________________________________________________________________________________'''
+guessed_states = []
 
-answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
-print(answer_state)
+while len(guessed_states) <50:
 
-if answer_state in all_states:
-    t = turtle.Turtle()
-    t.hideturtle()
-    t.penup()
-    state_data = data[data.state == answer_state]
-    t.goto(state_data.x.item(), state_data.y.item())    # Capturing single element using .item
-    t.write(answer_state)
+    answer_state = screen.textinput(title=f"{len(guessed_states)}/50 States Correct", prompt="What's another state's name?").title() # Convert 1st letter to capital
+    print(answer_state)
+
+    if answer_state in all_states:
+        guessed_states.append(answer_state)
+        t = turtle.Turtle()
+        t.hideturtle()
+        t.penup()
+        state_data = data[data.state == answer_state]
+        t.goto(state_data.x.item(), state_data.y.item())    # Capturing single element using .item
+        t.write(answer_state)
 
 screen.exitonclick()
 
