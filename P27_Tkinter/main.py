@@ -3,6 +3,7 @@ from tkinter import *   # Must know about .pack, .place and .grid
 window = Tk()
 window.title("My first GUI program")    # Window title
 window.minsize(width=500, height=300)    # Minimum size of the window
+window.config(padx=20,pady=20)          # Add padding to the window 
 
 # Create the label (It displays now)
 my_label = Label(text="I am a label", font=("Arial", 24, "bold"))
