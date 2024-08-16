@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import *   # Must know about .pack, .place and .grid
 
 window = Tk()
 window.title("My first GUI program")    # Window title
@@ -6,10 +6,9 @@ window.minsize(width=500, height=300)    # Minimum size of the window
 
 # Create the label (It displays now)
 my_label = Label(text="I am a label", font=("Arial", 24, "bold"))
-my_label.pack() # my_label.pack(side="left")  # Setting the label in the window (Default side is center)
-
 my_label["text"] = "New text"  # Modify the text of the label using dictionary-like indexing
 my_label.config(text="New Text")  # Another way to modify the label text using the config method
+my_label.pack() # my_label.pack(side="left")  # Setting the label in the window (Default side is center)
 
 def button_clicked():
     print("I got clicked")
@@ -19,12 +18,14 @@ def button_clicked():
 
 # Button
 button = Button(text="Click me", command=button_clicked) # we put name of the function in command attribute 
-button.pack()
+button.place(x=0 , y=0) # In place we can give x value and the y value of  the place
 
 # Entry (create a text box)
 input = Entry(width=10)
-input.pack()
 print(input.get())
+input.pack()
+# .grid is use to place the items according to a grid 
+# Ex:- input.grid(column=0, row=0) (YOU CAN'T USE GRID AND PACK IN THE SAME PROGRAM)
 
 # ______________________________________________________________________________________________________________________
 
