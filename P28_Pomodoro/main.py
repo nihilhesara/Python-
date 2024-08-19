@@ -1,3 +1,6 @@
+from tkinter import *
+import os
+image_path = os.path.join("P28_Pomodoro", "tomato.png")
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -16,3 +19,12 @@ LONG_BREAK_MIN = 20
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 
 # ---------------------------- UI SETUP ------------------------------- #
+window = Tk()
+window.title("Pomodoro")
+
+canvas = Canvas(width=200, height=224)
+tomato_img = PhotoImage(file=image_path)
+canvas.create_image(100, 112, image=tomato_img)
+canvas.pack()
+
+window.mainloop()
