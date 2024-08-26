@@ -1,5 +1,7 @@
 import json
 
+website,email,password = ""
+
 # In detail in password generator program
 new_data = {
         website: {
