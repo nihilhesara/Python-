@@ -1,12 +1,17 @@
 from tkinter import *
+import os
+import requests
 
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def get_quote():
-    pass
-    #Write your code here.
+    response = requests.get(url="https://api.kanye.rest")
+    response.raise_for_status()
+    data = response.json()
+    quote = data["quote"]
+    canvas.itemconfig(quote_text, text=quote)
 
-
-
+# ------------------------------ UI DESIGN ------------------------------------------
 window = Tk()
 window.title("Kanye Says...")
 window.config(padx=50, pady=50)
